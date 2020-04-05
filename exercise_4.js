@@ -1,72 +1,70 @@
-let input = ['0001', 'Roman Alamsyah', 'Bandar Lampung', '21/05/1989', 'Membaca']
+var input = ['0001', 'Roman Alamsyah', 'Bandar Lampung', '21/05/1989', 'Membaca']
 
 function dataHandling2(input) {
     input.splice(1, 2, 'Roman Alamsyah Elsharawy', 'Provinsi Bandar Lampung');
     input.splice(4, 1, 'Pria', 'SMA Internasional Metro');
     console.log(`['${input[0]}', '${input[1]}', '${input[2]}', '${input[3]}', '${input[4]}', '${input[5]}']`);
     
+    let splitDate = input[3].split('/');
     let splitDateToSort = input[3].split('/');
-    let month = splitDateToSort[1];
+    let month = splitDate[1];
 
     let monthBulan = Number(month);
-    let monthString = '';
+    let mountHuruf = '';
 
     switch (monthBulan) {
         case 01:
-            monthString = 'Januari';
+            mountHuruf = 'Januari';
             break;
         case 02:
-            monthString = 'Februari';
+            mountHuruf = 'Februari';
             break;
         case 03:
-            monthString = 'Maret';
+            mountHuruf = 'Maret';
             break;
         case 04:
-            monthString = 'April';
+            mountHuruf = 'April';
             break;
         case 05:
-            monthString = 'Mei';
+            mountHuruf = 'Mei';
             break;
         case 06:
-            monthString = 'Juni';
+            mountHuruf = 'Juni';
             break;
         case 07:
-            monthString = 'Juli';
+            mountHuruf = 'Juli';
             break;
         case 08:
-            monthString = 'Agustus';
+            mountHuruf = 'Agustus';
             break;
         case 09:
-            monthString = 'September';
+            mountHuruf = 'September';
             break;
         case 10:
-            monthString = 'Oktober';
+            mountHuruf = 'Oktober';
             break;
         case 11:
-            monthString = 'November';
+            mountHuruf = 'November';
             break;
         case 12:
-            monthString = 'Desember';
+            mountHuruf = 'Desember';
             break;
         default:
-            monthString = 'input month false';
+            mountHuruf = 'input month false';
             break;
     }
-
-    console.log(monthString);
-
+    console.log(mountHuruf);
+    
     let sortedNumDescendDate = splitDateToSort.sort(function (a, b) {
         return b - a
     });
-
     console.log(sortedNumDescendDate);
 
-    let newJoinDate = splitDateToSort.join("-");
+    let newJoinDate = splitDate.join("-");
     console.log(newJoinDate);
 
-    let nama = input[1];
-    let slicedName = nama.slice(0, 14);
-
+    let name = input[1];
+    let slicedName = name.slice(0, 15);
     console.log(slicedName);
 }
 

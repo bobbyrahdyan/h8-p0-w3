@@ -1,14 +1,21 @@
 function angkaPalindrome(num) {
-    let num1 = num + 1;   
-    let reverse = '';   
-    while(true){
-    let i = String(num1);
-    reverse = i.split('').reverse().join('');
-    if(num1 === Number(reverse)){
-        return num1
+  let flag = false;
+
+  while (flag === false) {
+    num++;
+    strNumber = '' + num;
+    reversedNumber = '';
+
+    for (let i = strNumber.length - 1; i >= 0; i--) {
+      reversedNumber += strNumber[i];
     }
-    num1++
-  } 
+
+    if (strNumber === reversedNumber) {
+      flag = true;
+    }
+
+  }
+  return num;
 }
  
 // TEST CASES
